@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM-JavaScript</title>
+    <link rel="stylesheet" href="part1.css">
+    <script defer src="part1.js"></script>
+</head>
+<body>
+    <header>
+        <h1>QCM</h1>
+    </header>
+
+    <body>
+        <div class="time">
+            <div>Time remaining: <span id="clock">60</span>s</div>
+        </div>
+        <form>
+            <div class="question">
+                <label for="qt1"><span><b>1°/ Quelle est la bonne syntaxe pour afficher "Bonjour" dans la console ?</b></span></label>
+                <p><input type="radio" name="qt1"><span>print("Bonjour");</span></p>
+                <p><input type="radio" name="qt1"><span>echo("Bonjour");</span></p>
+                <p><input type="radio" name="qt1"><span>console.log("Bonjour");</span></p>
+                <p><input type="radio" name="qt1"><span>alert("Bonjour");</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt2"><span><b>2°/ Comment déclare-t-on une variable constante en JavaScript ?</b></span></label>
+                <p><input type="radio" name="qt2"><span>let</span></p>
+                <p><input type="radio" name="qt2"><span>var</span></p>
+                <p><input type="radio" name="qt2"><span>const</span></p>
+                <p><input type="radio" name="qt2"><span>static</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt3"><span><b>3°/ Que retourne typeof null en JavaScript ?</b></span></label>
+                <p><input type="radio" name="qt3"><span>null</span></p>
+                <p><input type="radio" name="qt3"><span>object</span></p>
+                <p><input type="radio" name="qt3"><span>undefined</span></p>
+                <p><input type="radio" name="qt3"><span>boolean</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt4"><span><b>4°/ Que fait la méthode Array.push() ?</b></span></label>
+                <p><input type="radio" name="qt4"><span>Trie les éléments du tableau</span></p>
+                <p><input type="radio" name="qt4"><span>Ajoute un élément au début du tableau</span></p>
+                <p><input type="radio" name="qt4"><span>Supprime le dernier élément du tableau</span></p>
+                <p><input type="radio" name="qt4"><span>Ajoute un élément à la fin du tableau</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt5"><span><b>5°/ Quelle méthode est utilisée pour convertir une chaîne en entier ?</b></span></label>
+                <p><input type="radio" name="qt5"><span>parseInt()</span></p>
+                <p><input type="radio" name="qt5"><span>Number()</span></p>
+                <p><input type="radio" name="qt5"><span>toInteger()</span></p>
+                <p><input type="radio" name="qt5"><span>String.toInt()</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt6"><span><b>6°/ Quelle est la portée d'une variable déclarée avec var ?</b></span></label>
+                <p><input type="radio" name="qt6"><span>Bloc</span></p>
+                <p><input type="radio" name="qt6"><span>Locale à la fonction</span></p>
+                <p><input type="radio" name="qt6"><span>Globale seulement</span></p>
+                <p><input type="radio" name="qt6"><span>Constante</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt7"><span><b>7°/ Que signifie === en JavaScript ?</b></span></label>
+                <p><input type="radio" name="qt7"><span>Comparaison de valeur uniquement</span></p>
+                <p><input type="radio" name="qt7"><span>Affectation de valeur</span></p>
+                <p><input type="radio" name="qt7"><span>Comparaison de valeur et de type</span></p>
+                <p><input type="radio" name="qt7"><span>Comparaison de type uniquement</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt8"><span><b>8°/ Quelle est la sortie de console.log(2 + "2") ?</b></span></label>
+                <p><input type="radio" name="qt8"><span>4</span></p>
+                <p><input type="radio" name="qt8"><span>NaN</span></p>
+                <p><input type="radio" name="qt8"><span>22</span></p>
+                <p><input type="radio" name="qt8"><span>undefined</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt9"><span><b>9°/ Comment déclare-t-on une fonction en JavaScript ?</b></span></label>
+                <p><input type="radio" name="qt9"><span>function maFonction {}</span></p>
+                <p><input type="radio" name="qt9"><span>def maFonction()</span></p>
+                <p><input type="radio" name="qt9"><span>function maFonction() {}</span></p>
+                <p><input type="radio" name="qt9"><span>maFonction() => {}</span></p>
+            </div>
+            
+            <div class="question hidden">
+                <label for="qt10"><span><b>10°/ Quelle méthode est utilisée pour parcourir tous les éléments d’un tableau ?</b></span></label>
+                <p><input type="radio" name="qt10"><span>map()</span></p>
+                <p><input type="radio" name="qt10"><span>forEach()</span></p>
+                <p><input type="radio" name="qt10"><span>filter()</span></p>
+                <p><input type="radio" name="qt10"><span>reduce()</span></p>
+            </div>
+            
+            
+        </form>
+        <div class="next">
+            <div class="button">Next</div>
+        </div>
+        <div class="score hidden" >
+        </div>
+    </body>
+    
+</body>
+</html>

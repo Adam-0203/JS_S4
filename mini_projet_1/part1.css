@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+
+.time {
+    width: 62%;
+    position: relative;
+}
+
+.time div {
+    position: absolute;
+    color: red;
+    right: 25px;
+    width: auto;
+    height: 2rem;
+    font-style: italic;
+}
+
+#clock {
+    display: inline-block;
+    color: red;
+    margin: 0;
+    font-weight: bold;
+
+}
+
+body {
+    min-height: 100%;
+    background: #352F5B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    margin-top: 45px;
+    background-color: #423A6F;
+    width: 58%;
+    min-height: 18rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+
+span,
+input {
+    display: inline-block;
+    margin: 0.5em;
+    font-size: 1.3rem;
+    outline: none;
+}
+
+input {
+    transform: scale(1.5);
+    border: 2px solid #000;
+
+}
+
+
+input:hover {
+    cursor: pointer;
+
+}
+
+header {
+    padding: 2rem;
+    font-size: x-large;
+}
+
+.next {
+    width: 58%;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.next .button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: aliceblue;
+    color: slateblue;
+    width: 10%;
+    height: 2rem;
+    display: grid;
+    place-content: center;
+    font-weight: bolder;
+    border-radius: 2px;
+}
+
+.score {
+    margin-top: 6.6%;
+    background-color: aliceblue;
+    color: #000;
+    width: 20%;
+    text-align: center;
+    padding: 2rem 2rem 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2a9d8f;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.next .button:hover {
+    cursor: pointer;
+    background-color: rgb(215, 218, 221);
+
+}
+
+.hidden {
+    display: none;
+}
