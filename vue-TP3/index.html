@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        /* ===== Modern Glassmorphism Style ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: white;
+            padding: 20px;
+        }
+
+        #app {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .filter-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            margin: 0 5px;
+        }
+
+        .filter-btn:hover, .active {
+            background: #6a5acd;
+        }
+
+        .task-list {
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        .task-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .task-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .task-desc {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .mark-btn {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            background: #847bad;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .mark-btn:hover {
+            background: #595080;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Task Manager</h2>
+
+        <div class="filters">
+            <button class="filter-btn" :class="{active: filterState === 'all'}" @click="setFilter('all')">Toutes</button>
+            <button class="filter-btn" :class="{active: filterState === 'completed'}" @click="setFilter('completed')">Terminées</button>
+            <button class="filter-btn" :class="{active: filterState === 'pending'}" @click="setFilter('pending')">À faire</button>
+        </div>
+
+        <p><strong>Nombre de tâches : {{ filteredTasks.length }}</strong></p>
+
+        <ul class="task-list">
+            <li v-for="task in filteredTasks" :key="task.id" class="task-item" :class="{completed: task.completed}">
+                <span class="task-title">{{ task.title }}</span>
+                <span class="task-desc">{{ task.description }}</span>
+                
+                <button v-show="!task.completed" class="mark-btn" @click="markCompleted(task)">Marquer comme terminée</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    tasks: [],
+                    filterState: 'all'
+                };
+            },
+            computed: {
+                filteredTasks() {
+                    if (this.filterState === 'completed') {
+                        return this.tasks.filter(task => task.completed);
+                    } else if (this.filterState === 'pending') {
+                        return this.tasks.filter(task => !task.completed);
+                    }
+                    return this.tasks;
+                }
+            },
+            methods: {
+                setFilter(state) {
+                    this.filterState = state;
+                },
+                markCompleted(task) {
+                    task.completed = true;
+                }
+            },
+            mounted() {
+                fetch('taskList.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.tasks = data;
+                    })
+                    .catch(error => console.error('Erreur de chargement des tâches:', error));
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
