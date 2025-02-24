@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Manipulation de vue</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+
+<body>
+<div id="monapp">
+	<button @click="button_clicked">{{titre}}</button>
+
+	<br>
+
+	<button @click="counter++">++</button>
+	<span>{{counter}}</span>
+	<button @click="counter--">--</button>
+
+	<br>
+
+	<input type="text" v-model="string">
+
+	<p v-if="string.includes(' ')">L'input de doit contenir aucun string</p>
+</div>
+
+
+<script>
+	const appli = {
+		data () {
+				return {
+					titre : "clicker sur moi",
+					counter : 0,
+					string : '',
+				}
+			},
+		methods : {
+			button_clicked()
+			{
+				this.titre = 'clické';
+			},
+		},
+	};
+
+	
+Vue.createApp(appli).mount("#monapp");
+</script>
+
+
+
+<style>
+	*
+	{
+		padding: 1rem;
+		font-size: 1rem;
+	}
+</style>
+</body>
+</html>
