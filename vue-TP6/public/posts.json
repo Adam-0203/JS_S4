@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "titre": "Introduction à Vue.js",
+      "tag": "Développement Web",
+      "contenu": "Vue.js est un framework JavaScript progressif utilisé pour construire des interfaces utilisateur. Il est conçu pour être facilement adoptable et intégrer avec d'autres bibliothèques ou projets existants."
+    },
+    {
+      "id": 2,
+      "titre": "Les bases de JavaScript",
+      "tag": "Programmation",
+      "contenu": "JavaScript est un langage de programmation qui permet d'ajouter de l'interactivité aux pages web. Il est essentiel pour la création d'applications web modernes."
+    },
+    {
+      "id": 3,
+      "titre": "Optimisation des performances en Python",
+      "tag": "Programmation",
+      "contenu": "Optimiser les performances de votre code Python peut grandement améliorer l'efficacité de vos applications. Cette pratique inclut des techniques comme la gestion de la mémoire et l'amélioration des algorithmes."
+    },
+    {
+      "id": 4,
+      "titre": "Introduction à Docker",
+      "tag": "DevOps",
+      "contenu": "Docker est une plateforme pour développer, expédier et exécuter des applications. Il permet d'encapsuler une application et ses dépendances dans un conteneur portable et reproductible."
+    },
+    {
+      "id": 5,
+      "titre": "Comprendre l'Intelligence Artificielle",
+      "tag": "IA",
+      "contenu": "L'Intelligence Artificielle (IA) est une branche de l'informatique qui crée des systèmes capables de simuler des fonctions cognitives humaines telles que la perception, le raisonnement et l'apprentissage."
+    }
+  ]
+  
