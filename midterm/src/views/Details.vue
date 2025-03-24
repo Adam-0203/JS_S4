@@ -16,12 +16,12 @@
 <template>
     <main>
         <div class="book">
-            <p>titre : {{ livre.titre }}</p>
-            <p>auteur : {{ livre.auteur }}</p>
-            <p>date de publication : {{ livre.publication }}</p>
-            <p>catégorie : {{ livre.catégorie }}</p>
-            <p>statut : {{ livre.statut }}</p>
-            <p>résumé : {{ livre.resume }}</p>
+            <p><span class="title">titre :</span> {{ livre.titre }}</p>
+            <p><span class="title">auteur :</span> {{ livre.auteur }}</p>
+            <p><span class="title">date de publication :</span> {{ livre.publication }}</p>
+            <p><span class="title">catégorie :</span> {{ livre.catégorie }}</p>
+            <p><span class="title">statut :</span> {{ livre.statut }}</p>
+            <p><span class="title">résumé : </span>{{ livre.resume }}</p>
         </div>
     </main>
 </template>
@@ -45,5 +45,12 @@
         position: absolute;
         top: 70px;
         width: 100%;
+    }
+
+    .title
+    {
+        display: inline-block;
+        color: red;
+        font-weight: bold;
     }
 </style>
